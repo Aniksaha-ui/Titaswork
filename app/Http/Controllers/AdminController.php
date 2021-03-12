@@ -186,4 +186,29 @@ class AdminController extends Controller
         return view("Homepage.HomepageForAdmin.adminDashBoard",compact('newOrderMessage','users_total_order','pending_message'));    
 
     }
+
+
+    public function searchconfirmingorder(){
+
+        return view('order.orderhistory.ordersearching');
+
+    }
+
+
+    public function searchconfirmingorderresult(Request $request){
+
+        $date=$request->date;
+
+        $searchresult=DB::table('orders')
+                      ->join('products','orders.order_pid','products.id')
+                      ->join('users','orders.o_user_id','users.id')
+                      ->select(DB::raw("SUM(order_subtotal-((order_discount_amount*order_subtotal)/100))  as orderamount"),'name','o_user_id')
+                      ->where('order_date',$date)
+                      ->groupBy('name','o_user_id')
+                      ->get();
+
+                 return view('order.orderlist.groupusersmanage',compact('searchresult'));
+
+
+    }
 }

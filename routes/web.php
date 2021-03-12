@@ -269,22 +269,8 @@ Route::get('combo/delete/{id}','ComboController@delete');
 Route::get('posts','HomepageController@posts');
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Route::get('/searchconfirmorder','AdminController@searchconfirmingorder');
+Route::post('/searchresultoforderbydate','AdminController@searchconfirmingorderresult');
+// Route::get('/orderresultshowdetails')
 
 
