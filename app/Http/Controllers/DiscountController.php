@@ -162,4 +162,44 @@ class DiscountController extends Controller
         // dd($discounted_product);
         return view("Discount.showdiscountproduct",compact('discounted_product'));
     }
+
+
+    public function manageDiscountedproduct(){
+        $discountedproduct=DB::table('dicounts')
+                           ->join('products','dicounts.product_id','products.id')
+                           ->select('products.p_name','dicounts.*')
+                           ->get();
+
+                        return view("Discount.manageDiscount",compact('discountedproduct'));
+
+
+    }
+
+  public function deleteDiscount($id){
+
+
+            $id=$id;
+            $old_quantity=$user_info= DB::table('dicounts')->where('id', $id)->select('discounted_quantity')->pluck('discounted_quantity')->first();
+
+
+            $product_id= DB::table('dicounts')->where('id', $id)->select('product_id')->pluck('product_id')->first();
+
+
+            $product_original_quantity=DB::table('products')->where('id', $product_id)->select('p_quan')->pluck('p_quan')->first();
+
+            $a=$old_quantity+$product_original_quantity;
+         
+
+            product::findOrFail($product_id)->update([
+
+                    'p_quan'=>$a,
+            ]);
+
+
+
+
+
+            dicount::findOrFail($id)->delete();
+            return back();
+  }
 }

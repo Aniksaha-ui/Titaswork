@@ -198,6 +198,7 @@ class AdminController extends Controller
     public function searchconfirmingorderresult(Request $request){
 
         $date=$request->date;
+              session(['date' => $date]);
 
         $searchresult=DB::table('orders')
                       ->join('products','orders.order_pid','products.id')
@@ -210,5 +211,26 @@ class AdminController extends Controller
                  return view('order.orderlist.groupusersmanage',compact('searchresult'));
 
 
+    }
+
+
+    public function ordershowdetail($id){
+
+        $id=$id;    
+        $date = session()->get('date');
+        $order=DB::table('orders')
+               ->join('products','orders.order_pid','products.id')
+               ->join('users','orders.o_user_id','users.id')
+               ->where('o_user_id',$id)
+               ->where('order_date',$date)
+               ->select("*")
+               ->get();
+
+   
+
+
+
+
+               return view('order.orderlist.groupusersmanageresult',compact('order','order1','date'));
     }
 }

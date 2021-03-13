@@ -169,6 +169,10 @@ Route::post('/updateOrder',"OrderController@updateYourOrder");
 //Discount page for admin
 Route::get('/adddiscount',"DiscountController@discount");
 Route::post('/adddiscount','DiscountController@discountstore');
+Route::get('/managediscountedproduct','DiscountController@manageDiscountedproduct');
+Route::get('/Discount/delete/{id}','DiscountController@deleteDiscount');
+
+
 
 //Discount page for admin end
 
@@ -228,7 +232,7 @@ Route::post('/adduser',"CustomerController@create");
 
 //user Details
 
-Route::get('/userDetails',"UserController@userdetails");
+Route::get('/userDetails',"UserController@userinformationshow");
 Route::get('profile/edit/{id}',"UserController@profilechange");
 Route::post('/updateprofile','UserController@profileedit');
 
@@ -269,8 +273,24 @@ Route::get('combo/delete/{id}','ComboController@delete');
 Route::get('posts','HomepageController@posts');
 
 
+
+//DayBook
 Route::get('/searchconfirmorder','AdminController@searchconfirmingorder');
 Route::post('/searchresultoforderbydate','AdminController@searchconfirmingorderresult');
-// Route::get('/orderresultshowdetails')
+Route::get('/orderresultshowdetails/{id}','AdminController@ordershowdetail');
+
+//DayBook end
+
+
+
+
+//Manager Dashboard
+
+Route::get('/undermanager','ManagerController@index');
+Route::get('/discountformanager','ManagerController@commision');
+
+
+
+
 
 

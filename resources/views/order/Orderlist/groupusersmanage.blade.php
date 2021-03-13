@@ -29,7 +29,7 @@
 						      <td style="text-align: center;">{{$searchresult->orderamount}}</td>
 						    <td style="text-align: center;">
 
-                          <a href="{{URL('/orderresultshowdetails'.$searchresult->o_user_id)}}" class="btn btn-success">
+                          <a href="{{URL('/orderresultshowdetails/'.$searchresult->o_user_id)}}" class="btn btn-success">
                             <span  class="glyphicon glyphicon-edit">Show Details</span>  
                           
                           </td>

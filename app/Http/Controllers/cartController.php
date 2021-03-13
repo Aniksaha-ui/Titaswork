@@ -631,8 +631,10 @@ public function UpdateProductOrderStatusUnconfirmed($cart_id){
 
 
 
-    public function payment(){
+    public function payment(Request $request){
   
+    // dd()
+
     //from session find the user id 
     $id=session('id');
     $discount_amount = session('discount_percentage');
@@ -687,7 +689,9 @@ public function UpdateProductOrderStatusUnconfirmed($cart_id){
                 'order_subtotal'=> $subtotal,
                 'order_carts_discount_in_tk'=>$UsersOrderFind->cart_discount_in_tk,
                 'order_carts_discount_in_percentage'=>$UsersOrderFind->cart_discount_in_percentage,
-                'manager_given_commision'=>0
+                'manager_given_commision'=>0,
+                'shipping_method' => "patho",
+                'del_status' => "pending"
                     ]);
 
     #delete from cart where order place
@@ -737,7 +741,10 @@ public function UpdateProductOrderStatusUnconfirmed($cart_id){
                 'order_subtotal'=> $subtotal,
                 'order_carts_discount_in_tk'=>$UsersOrderFind->cart_discount_in_tk,
                 'order_carts_discount_in_percentage'=>$UsersOrderFind->cart_discount_in_percentage,
-                'manager_given_commision'=>0
+                'manager_given_commision'=>0,
+                'shipping_method' => "patho",
+                'del_status' => "pending"
+
                     ]);
 
     #delete from cart where order place

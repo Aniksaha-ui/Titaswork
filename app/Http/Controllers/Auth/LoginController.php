@@ -33,7 +33,12 @@ class LoginController extends Controller
             if($user->role=="admin"){
                 return redirect("/dashboard");
             }
+            else if($user->role=="manager"){
+                return redirect("/discountformanager");
+            }
+
             else{
+                
                 return redirect("/catagoryshow");
             }
 

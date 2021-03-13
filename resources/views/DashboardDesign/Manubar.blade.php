@@ -59,6 +59,7 @@
                   <li><a href="{{url("/manageproductadmin")}}"><i class="fa fa-angle-right"></i>Manage</a></li>
                   <li><a href="{{url("/productwiseprofit")}}"><i class="fa fa-angle-right"></i>Productwise Profit</a></li>
                    <li><a href="{{url("/adddiscount")}}"><i class="fa fa-angle-right"></i>Add Discount</a></li>
+                    <li><a href="{{url("/managediscountedproduct")}}"><i class="fa fa-angle-right"></i>Manage Discount</a></li>
                 </ul>
               </li>
 
@@ -110,9 +111,9 @@
              
 			  
         <li>
-                <a href="widgets.html">
-                <i class="fa fa-th"></i> <span>Widgets</span>
-                <small class="label pull-right label-info">08</small>
+                <a href="{{url("/searchconfirmorder")}}">
+                <i class="fa fa-th"></i> <span>Daybook</span>
+                <small class="label pull-right label-info"></small>
                 </a>
               </li>
               <li class="treeview">

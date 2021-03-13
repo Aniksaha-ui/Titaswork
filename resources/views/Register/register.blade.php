@@ -3,7 +3,7 @@
 
 <div class="form-three widget-shadow" style=" background-color: #659DBD">
               <div class=" panel-body-inputin">
-              <p style="color: black;text-align: center;font-family: Arial;">Product Insert</p>
+              <p style="color: black;text-align: center;font-family: Arial;">New User</p>
                  <form method="POST" class="form-horizontal" enctype="multipart/form-data">
                        {{csrf_field()}} 
                   <div class="form-group" style="margin-left: 200px;margin-left: 100px; padding-top: 30px; padding-bottom: 30px;">
@@ -172,10 +172,10 @@
 
 
 
+ <div class="col text-center">
 
-
-   <button style="margin-left: 400px;" type="submit" class="btn btn-">add new Product</button>
-                  
+   <button style="background-color: powderblue;" type="submit" class="btn btn-">add new User</button>
+   </div>               
 
                     </div>
                   

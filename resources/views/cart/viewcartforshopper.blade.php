@@ -5,7 +5,7 @@
 <form action="{{route('updatecart')}}"" method="post">
 @csrf
 <div class="table-responsive bs-example widget-shadow" style=" background-color: #659DBD">
-      <h3 style="text-align: center;margin-right: 450px;margin-left:450px;background-color: red;padding-top: 20px;padding-bottom: 20px;">Order List</h3>
+      <h3 style="text-align: center;margin-right: 45%px;margin-left:45%px;background-color: red;padding-top: 20px;padding-bottom: 20px;">Order List</h3>
    
         
         <br>
@@ -15,10 +15,10 @@
            
             <th>Product</th>
               <th>quantity</th>
-              <th>p_price</th>
+              <th>price</th>
               <th>Order Status</th>
               <th>Subtotal</th>
-              <th colspan="3" style="text-align: center;">Action</th>
+              <th colspan="1" style="text-align: center;">Action</th>
             </tr>
           </thead>
           <tbody>

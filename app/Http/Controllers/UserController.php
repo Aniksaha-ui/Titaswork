@@ -113,8 +113,10 @@ class UserController extends Controller
     }
 
 
-    public function userdetails(){
+    public function userinformationshow(){
                     $id=Auth::id();
+
+             
 
 
                  $user=DB::table("users")
@@ -122,6 +124,8 @@ class UserController extends Controller
                        ->select("*")
                        ->where("users.id",$id)
                        ->get();
+
+                      
 
                 return view("UserPages.profileshow",compact('user'));
 

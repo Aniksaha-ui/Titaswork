@@ -16,6 +16,8 @@ class order extends Model
 'order_date',
 'order_discount_amount',
 'manager_given_commision',
+'shipping_method',
+'del_status',
     ];
 
 }

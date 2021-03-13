@@ -28,6 +28,8 @@ class CreateOrdersTable extends Migration
             $table->Integer('order_carts_discount_in_tk');
             $table->Integer('order_carts_discount_in_percentage');
             $table->Integer('manager_given_commision');
+            $table->string('shipping_method')->Default('Patho');
+            $table->string('del_status')->Default('pending');
             $table->timestamps();
         });
     }
